@@ -5,6 +5,8 @@ import (
 	"math"
 )
 
+var fmtPrintf = fmt.Printf
+
 func CubeSumO3() {
 	limit := 50
 
@@ -16,7 +18,7 @@ func CubeSumO3() {
 				afterEqual := math.Pow(float64(indexC), 3) + math.Pow(float64(indexD), 3)
 
 				if beforeEqual == afterEqual && indexD > 0 && indexD < float64(limit) {
-					fmt.Printf("The results is a=%v, b=%v, c=%v, d=%v", indexA, indexB, indexC, indexD)
+					fmtPrintf("The results is a=%v, b=%v, c=%v, d=%v", indexA, indexB, indexC, indexD)
 				}
 			}
 		}
