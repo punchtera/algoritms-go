@@ -20,7 +20,7 @@ func isStringOneOperationAway(testString1 string, testString2 string) bool {
 		}
 	}
 
-	if mapLength := len(charsMapDiff); mapLength == 2 {
+	if mapLength := len(charsMapDiff); mapLength <= 2 {
 		// its a single operation or 2 different characters, a replce
 		return true
 	}
