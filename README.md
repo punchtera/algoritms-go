@@ -14,3 +14,4 @@ __This is the way of renaming default imports__
 import quoteV3 "rsc.io/quote/v3"
 
 for cleaning dependencies `go mod tidy`
+for adding the module to the work directory (inside the specific module folder) `go work use .`
