@@ -31,3 +31,15 @@ func (currentList LinkedList) ShowValues() {
 	}
 	fmt.Println("End: ")
 }
+
+func (currentList LinkedList) GetLength() int {
+	var n = &currentList.head
+	var length = 0
+
+	for n.next != nil {
+		length += 1
+		n = n.next
+	}
+
+	return length
+}
