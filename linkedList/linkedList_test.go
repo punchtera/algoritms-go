@@ -1,10 +1,21 @@
 package linkedList
 
-import "testing"
+import (
+	"strconv"
+	"testing"
+)
 
 func TestLinkedList(t *testing.T) {
-	want := "Hello, world."
-	if got := "Hello, world."; got != want {
-		t.Errorf("Hello, world. = %q, want %q", got, want)
+	linkedList := LinkedList{
+		head: LinkedListNode{
+			value: 6,
+			next:  nil,
+		},
+	}
+
+	want := strconv.Itoa(6)
+	result := strconv.Itoa(linkedList.head.value)
+	if result != want {
+		t.Errorf("The head value is different value = %q, want = %q \n", result, want)
 	}
 }
