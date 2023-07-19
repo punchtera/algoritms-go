@@ -16,6 +16,6 @@ func TestLinkedList(t *testing.T) {
 	want := strconv.Itoa(6)
 	result := strconv.Itoa(linkedList.head.value)
 	if result != want {
-		t.Errorf("The head value is different value = %q, want = %q \n", result, want)
+		t.Errorf("The head value = %q is different than the want = %q \n", result, want)
 	}
 }
