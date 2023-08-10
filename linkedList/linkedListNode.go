@@ -22,6 +22,7 @@ func (currentListNode *LinkedListNode) AppendToTail(nextValue int) {
 	for n.next != nil {
 		n = n.next
 	}
+
 	n.next = &newListNode
 	fmt.Printf("%v", strconv.Itoa(n.value))
 	fmt.Printf("%v", n.next.value)
@@ -33,6 +34,7 @@ func (currentList *LinkedList) ShowValues() {
 	fmt.Println("\n Begin: ")
 	for n.next != nil {
 		fmt.Printf("%d", n.value)
+		n = n.next
 	}
 	fmt.Println("\n End: ")
 }
