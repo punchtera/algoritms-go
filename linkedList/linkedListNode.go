@@ -1,6 +1,9 @@
 package linkedList
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 type LinkedListNode struct {
 	value int
@@ -11,30 +14,32 @@ type LinkedList struct {
 	head LinkedListNode
 }
 
-func (currentListNode LinkedListNode) AppendToTail(nextValue int) {
+func (currentListNode *LinkedListNode) AppendToTail(nextValue int) {
 	newListNode := LinkedListNode{value: nextValue}
 
-	var n = &currentListNode
+	var n = currentListNode
 
 	for n.next != nil {
 		n = n.next
 	}
 	n.next = &newListNode
+	fmt.Printf("%v", strconv.Itoa(n.value))
+	fmt.Printf("%v", n.next.value)
 }
 
-func (currentList LinkedList) ShowValues() {
+func (currentList *LinkedList) ShowValues() {
 	var n = &currentList.head
 
-	fmt.Println("Begin: ")
+	fmt.Println("\n Begin: ")
 	for n.next != nil {
 		fmt.Printf("%d", n.value)
 	}
-	fmt.Println("End: ")
+	fmt.Println("\n End: ")
 }
 
-func (currentList LinkedList) GetLength() int {
+func (currentList *LinkedList) GetLength() int {
 	var n = &currentList.head
-	var length = 0
+	var length = 1
 
 	for n.next != nil {
 		length += 1
