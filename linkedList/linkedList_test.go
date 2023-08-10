@@ -33,6 +33,7 @@ func TestLinkedList_GetLength(t *testing.T) {
 	linkedList.head.AppendToTail(2)
 
 	result := linkedList.GetLength()
+	linkedList.ShowValues()
 
 	want := 4
 	if result != want {
