@@ -1,10 +1,5 @@
 package doubleLinkedList
 
-import (
-	"fmt"
-	"strconv"
-)
-
 type DoubleLinkedListNode struct {
 	value int
 	prev  *DoubleLinkedListNode
@@ -12,13 +7,14 @@ type DoubleLinkedListNode struct {
 }
 
 type DoubleLinkedList struct {
-	head DoubleLinkedListNode
+	head *DoubleLinkedListNode
+	tail *DoubleLinkedListNode
 }
 
-func (currentListNode *DoubleLinkedListNode) AppendToTail(nextValue int) {
+func (doubleLinkedList *DoubleLinkedList) AppendToTail(nextValue int) {
 	newListNode := DoubleLinkedListNode{value: nextValue}
 
-	var n = currentListNode
+	var n = doubleLinkedList.head
 
 	for n.next != nil {
 		n = n.next
@@ -26,18 +22,17 @@ func (currentListNode *DoubleLinkedListNode) AppendToTail(nextValue int) {
 
 	newListNode.prev = n
 	n.next = &newListNode
-	fmt.Printf("%v", strconv.Itoa(n.value))
-	fmt.Printf("%v", n.next.value)
+	doubleLinkedList.tail = &newListNode
 }
 
-func (currentList *DoubleLinkedList) ShowValues() {
-	var n = &currentList.head
+// func (currentList *DoubleLinkedList) ShowValues() {
+// 	var n = &currentList.head
 
-	fmt.Println("\n Begin: ")
+// 	fmt.Println("\n Begin: ")
 
-	for n.next != nil {
-		fmt.Printf("%d", n.value)
-		n = n.next
-	}
-	fmt.Println("\n End: ")
-}
+// 	for n.next != nil {
+// 		fmt.Printf("%d", n.value)
+// 		n = n.next
+// 	}
+// 	fmt.Println("\n End: ")
+// }
