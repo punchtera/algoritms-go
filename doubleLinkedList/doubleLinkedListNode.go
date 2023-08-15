@@ -1,5 +1,9 @@
 package doubleLinkedList
 
+import (
+	"fmt"
+)
+
 type DoubleLinkedListNode struct {
 	value int
 	prev  *DoubleLinkedListNode
@@ -25,14 +29,15 @@ func (doubleLinkedList *DoubleLinkedList) AppendToTail(nextValue int) {
 	doubleLinkedList.tail = &newListNode
 }
 
-// func (currentList *DoubleLinkedList) ShowValues() {
-// 	var n = &currentList.head
+func (currentList *DoubleLinkedList) ShowValues() {
+	var n = currentList.head
 
-// 	fmt.Println("\n Begin: ")
+	fmt.Println("\n Begin: ")
 
-// 	for n.next != nil {
-// 		fmt.Printf("%d", n.value)
-// 		n = n.next
-// 	}
-// 	fmt.Println("\n End: ")
-// }
+	for n.next != nil {
+		fmt.Printf("%d\n", n.value)
+		n = n.next
+	}
+	fmt.Printf("%d\n", n.value)
+	fmt.Println("End: ")
+}

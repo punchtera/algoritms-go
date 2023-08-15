@@ -18,3 +18,15 @@ func TestDoubleLinkedList(t *testing.T) {
 		t.Errorf("The head value = %q is different than the want = %q \n", result, want)
 	}
 }
+
+func TestDoubleLinkedListShowAll(t *testing.T) {
+	doubleLinkedList := DoubleLinkedList{
+		head: &DoubleLinkedListNode{
+			value: 6,
+		},
+	}
+	doubleLinkedList.AppendToTail(2)
+	doubleLinkedList.AppendToTail(11)
+
+	doubleLinkedList.ShowValues()
+}
