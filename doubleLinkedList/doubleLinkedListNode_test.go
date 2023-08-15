@@ -30,3 +30,15 @@ func TestDoubleLinkedListShowAll(t *testing.T) {
 
 	doubleLinkedList.ShowValues()
 }
+
+func TestDoubleLinkedListShowReverseAll(t *testing.T) {
+	doubleLinkedList := DoubleLinkedList{
+		head: &DoubleLinkedListNode{
+			value: 6,
+		},
+	}
+	doubleLinkedList.AppendToTail(2)
+	doubleLinkedList.AppendToTail(11)
+
+	doubleLinkedList.ShowReverseValues()
+}

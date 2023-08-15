@@ -41,3 +41,15 @@ func (currentList *DoubleLinkedList) ShowValues() {
 	fmt.Printf("%d\n", n.value)
 	fmt.Println("End: ")
 }
+
+func (currentList *DoubleLinkedList) ShowReverseValues() {
+	var n = currentList.tail
+	fmt.Println("\n Begin: ")
+
+	for n.prev != nil {
+		fmt.Printf("%d\n", n.value)
+		n = n.prev
+	}
+	fmt.Printf("%d\n", n.value)
+	fmt.Println("End: ")
+}
