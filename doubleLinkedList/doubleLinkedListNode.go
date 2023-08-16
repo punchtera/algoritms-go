@@ -29,6 +29,17 @@ func (doubleLinkedList *DoubleLinkedList) AppendToTail(nextValue int) {
 	doubleLinkedList.tail = &newListNode
 }
 
+func (doubleLinkedList *DoubleLinkedList) AppendToHead(nextValue int) {
+	newListNode := DoubleLinkedListNode{value: nextValue}
+	var headNode = doubleLinkedList.head
+
+	newListNode.next = headNode
+	newListNode.prev = doubleLinkedList.tail
+	headNode.prev = &newListNode
+
+	doubleLinkedList.head = &newListNode
+}
+
 func (currentList *DoubleLinkedList) ShowValues() {
 	var n = currentList.head
 

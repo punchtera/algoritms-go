@@ -42,3 +42,16 @@ func TestDoubleLinkedListShowReverseAll(t *testing.T) {
 
 	doubleLinkedList.ShowReverseValues()
 }
+
+func TestDoubleLinkedListAppendHead(t *testing.T) {
+	doubleLinkedList := DoubleLinkedList{
+		head: &DoubleLinkedListNode{
+			value: 6,
+		},
+	}
+	doubleLinkedList.AppendToHead(2)
+	doubleLinkedList.AppendToTail(11)
+
+	doubleLinkedList.ShowValues()
+	// Should display [2] -> [6] -> 11
+}
