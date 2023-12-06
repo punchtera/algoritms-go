@@ -15,3 +15,9 @@ import quoteV3 "rsc.io/quote/v3"
 
 for cleaning dependencies `go mod tidy`
 for adding the module to the work directory (inside the specific module folder) `go work use .`
+
+__run__
+
+if one wants to execute a program, it need to change the package to main
+build the package typing `go build *.go` and then execute the
+generated binary passing the arguments using  `go run *.exe`
