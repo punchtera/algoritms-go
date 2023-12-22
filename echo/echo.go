@@ -7,15 +7,22 @@ import (
 )
 
 func main() {
-	s, sep := "", ""
-
 	filename := filepath.Base(os.Args[0])
-	fmt.Printf("commandName %s \n", filename)
+	fmt.Printf("commandName %s.exe \n", filename)
 
-	for i, arg := range os.Args[1:] {
+	r := buildString(os.Args[1:])
+
+	fmt.Println(r)
+}
+
+func buildString(sArr []string) string {
+
+	s, sep := "", ""
+	for i, arg := range sArr {
 		s += sep + arg
 		sep = " "
 		fmt.Printf("[%d] : [%s]\n", i, arg)
 	}
-	fmt.Println(s)
+
+	return s
 }
