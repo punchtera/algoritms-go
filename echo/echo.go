@@ -3,12 +3,15 @@ package main
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 )
 
 func main() {
 	s, sep := "", ""
 
-	fmt.Printf("Command %s \n", os.Args[0])
+	filename := filepath.Base(os.Args[0])
+	fmt.Printf("commandName %s \n", filename)
+
 	for i, arg := range os.Args[1:] {
 		s += sep + arg
 		sep = " "
